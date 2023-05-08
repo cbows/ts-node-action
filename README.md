@@ -344,23 +344,19 @@ Builtin actions are all higher-order functions so they can easily have options
 overridden on a per-lang basis. Check out the implementations under
 `lua/filetypes/` to see how!
 
-<!-- markdownlint-disable line-length -->
-
-|                            | (\*) | Ruby | js/ts/tsx/jsx | Lua | Python | PHP | Rust | JSON | HTML | YAML | R   |
-| -------------------------- | ---- | ---- | ------------- | --- | ------ | --- | ---- | ---- | ---- | ---- | --- |
-| `toggle_boolean()`         | ✅    | ✅    | ✅             | ✅   | ✅      | ✅   | ✅    |      |      | ✅    | ✅   |
-| `cycle_case()`             | ✅    | ✅    | ✅             | ✅   | ✅      | ✅   | ✅    |      |      |      | ✅   |
-| `cycle_quotes()`           | ✅    | ✅    | ✅             | ✅   | ✅      | ✅   |      |      |      |      | ✅   |
-| `toggle_multiline()`       |      | ✅    | ✅             | ✅   | ✅      | ✅   | ✅    | ✅    |      |      | ✅   |
-| `toggle_operator()`        |      | ✅    | ✅             | ✅   | ✅      | ✅   |      |      |      |      | ✅   |
-| `toggle_int_readability()` |      | ✅    | ✅             |     | ✅      | ✅   | ✅    | ✅    |      |      |     |
-| `toggle_block()`           |      | ✅    |               |     |        |     |      |      |      |      |     |
-| if/else \<-> ternery       |      | ✅    |               |     | ✅      |     |      |      |      |      |     |
-| if block/postfix           |      | ✅    |               |     |        |     |      |      |      |      |     |
-| `toggle_hash_style()`      |      | ✅    |               |     |        |     |      |      |      |      |     |
-| `conceal_string()`         |      |      | ✅             |     |        |     |      |      | ✅    |      |     |
-
-<!-- markdownlint-enable line-length -->
+|  | (*) | Ruby | js/ts/tsx/jsx | Lua | Python | PHP | Rust | JSON | HTML | YAML | R | Rust |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `toggle_boolean()` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
+| `cycle_case()` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  |  |  | ✅ | ✅ | ✅ |
+| `cycle_quotes()` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  |  |  |  | ✅ |  |
+| `toggle_multiline()` |  | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  |  |  | ✅ |
+| `toggle_operator()` |  | ✅ | ✅ | ✅ | ✅ | ✅ |  |  |  |  | ✅ | ✅ |
+| `toggle_int_readability()` |  | ✅ | ✅ |  | ✅ | ✅ | ✅ | ✅ |  |  |  | ✅ |
+| `toggle_block()` |  | ✅ |  |  |  |  |  |  |  |  |  |  |
+| if/else <-> ternery |  | ✅ |  |  | ✅ |  |  |  |  |  |  |  |
+| if block/postfix |  | ✅ |  |  |  |  |  |  |  |  |  |  |
+| `toggle_hash_style()` |  | ✅ |  |  |  |  |  |  |  |  |  |  |
+| `conceal_string()` |  |  | ✅ |  |  |  |  |  | ✅ |  |  |  |
 
 ## Testing
 
