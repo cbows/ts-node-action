@@ -26,6 +26,13 @@ end
 --- @return self
 function Buffer:setup()
   self.handle = vim.api.nvim_create_buf(false, true)
+
+  for _, lang in ipairs({ "git_rebase", "python" }) do
+    vim.treesitter.language.add(lang, {
+      path = "spec/support/nvim-treesitter/parser/" .. lang .. ".so",
+    })
+  end
+
   vim.treesitter.start(self.handle, self.lang)
 
   for key, value in pairs(self.opts) do

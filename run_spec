@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+export NVIM_APPNAME=nvim-ts-node-action-test
+
 nvim -n --clean --noplugin -u NORC --headless -S "./spec/init.lua"

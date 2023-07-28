@@ -23,5 +23,7 @@ if os.getenv("CI") then
 else
   ensure_installed("nvim-lua/plenary.nvim")
   ensure_installed("nvim-treesitter/nvim-treesitter")
-  require("plenary.test_harness").test_directory("spec/filetypes")
+  -- require('plenary.test_harness').test_directory('spec/filetypes')
+  vim.opt.runtimepath:prepend(".")
+  require("plenary.busted").run("spec/filetypes/python/quotes_spec.lua")
 end
