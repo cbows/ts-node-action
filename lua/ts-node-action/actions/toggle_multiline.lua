@@ -36,20 +36,16 @@ local function expand_child_nodes(node)
   local replacement = {}
 
   for child in node:iter_children() do
-    if child:named() then
-      table.insert(replacement, helpers.node_text(child))
+    local text = helpers.node_text(child)
+    local is_delimiter = not child:named()
+        and child:prev_sibling()
+        and child:next_sibling()
+    if is_delimiter then
+      replacement[#replacement] = replacement[#replacement] .. text
     else
-      if child:next_sibling() and child:prev_sibling() then
-        replacement[#replacement] = replacement[#replacement]
-          .. helpers.node_text(child)
-      elseif not child:prev_sibling() then -- Opening brace
-        table.insert(replacement, helpers.node_text(child))
-      else -- Closing brace
-        table.insert(replacement, helpers.node_text(child))
-      end
+      replacement[#replacement + 1] = text
     end
   end
-
   return replacement
 end
 
